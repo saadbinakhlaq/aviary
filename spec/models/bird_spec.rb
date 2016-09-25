@@ -15,4 +15,13 @@ RSpec.describe Bird, type: :model do
       create(:bird, continents: [''])
     }.to raise_error(Mongoid::Errors::Validations)
   end
+
+  describe '#scopes' do
+    describe '#visible' do
+      it 'returns a list of visible birds' do
+        bird = create(:bird, visible: true)
+        expect(Bird.visible).to include(bird)
+      end
+    end
+  end
 end

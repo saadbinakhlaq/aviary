@@ -3,7 +3,7 @@ class BirdsController < ApplicationController
 
   # GET /birds
   def index
-    @birds = Bird.all
+    @birds = Bird.visible
 
     render json: @birds
   end
@@ -20,16 +20,7 @@ class BirdsController < ApplicationController
     if @bird.save
       render json: @bird, status: :created, location: @bird
     else
-      render json: @bird.errors, status: :unprocessable_entity
-    end
-  end
-
-  # PATCH/PUT /birds/1
-  def update
-    if @bird.update(bird_params)
-      render json: @bird
-    else
-      render json: @bird.errors, status: :unprocessable_entity
+      render json: @bird.errors, status: :bad_request
     end
   end
 

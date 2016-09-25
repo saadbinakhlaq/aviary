@@ -13,6 +13,8 @@ class Bird
   validates :continents, presence: true
   validates_with ContinentsValidator, fields: [:continents]
 
+  scope :visible, -> { where(visible: true) }
+
   private
 
   def set_added
