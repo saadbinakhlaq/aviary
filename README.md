@@ -15,6 +15,6 @@ the server will start on port 3000
 
 ##RUN TESTS
 `$ rake`
-
+controller, model, and routing specs available
 
 
