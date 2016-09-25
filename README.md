@@ -1,24 +1,20 @@
-# README
+##Running the application
+start mongo on 27017 port
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+create databases
+rake db:create
+rake db:test:prepare
 
-Things you may want to cover:
+seed data
+rake db:seed
 
-* Ruby version
+start the server
+rails s
 
-* System dependencies
+the server will start on port 3000
 
-* Configuration
+##RUN TESTS
+`$ rake`
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
